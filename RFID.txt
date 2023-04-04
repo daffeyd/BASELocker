@@ -1,0 +1,1 @@
+Fitur RFID, di mana kami menggunakan kartu flazz BINUSIAN ssebagai kunci untuk membuka loker yang disewa.
