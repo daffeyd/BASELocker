@@ -105,7 +105,7 @@ if ((isset($_SESSION['iduser']) && (isset($_SESSION['username']) && (isset($_SES
             <script type="text/javascript">
                 function selectLocker(lockerPosition, name) {
                     if (confirm("Do you want to choose " + lockerPosition + " in " + name)) {
-                        window.location.href = "http://192.168.43.7/BASELocker/proses/lockerQuery.php?kampus='.$titik .$_SESSION["kampus"] .$titik. '&ruangan=' .$titik. $_SESSION["ruangan"].$titik . '&nama='.$titik . $_SESSION["nama"] .$titik.'&no=" + lockerPosition ;
+                        window.location.href = "http://localhost/BASELocker/website/BASElocker/proses/lockerQuery.php?kampus='.$titik .$_SESSION["kampus"] .$titik. '&ruangan=' .$titik. $_SESSION["ruangan"].$titik . '&nama='.$titik . $_SESSION["nama"] .$titik.'&no=" + lockerPosition ;
                     } 
                     else 
                     {

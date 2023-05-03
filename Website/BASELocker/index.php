@@ -114,7 +114,7 @@ if ((isset($_SESSION['iduser']) && (isset($_SESSION['username']) && (isset($_SES
             <script type="text/javascript">
                 function returnLocker(lockerPosition, kampus,lokasi, name) {
                     if (confirm("Do you want to return " + lockerPosition + " in " + name)) {
-                        window.location.href = "http://192.168.43.7/BASELocker/proses/returnLocker.php?kampus=" + kampus + "&lokasi=" + lokasi + "&name=" + name + "&position=" + lockerPosition ;
+                        window.location.href = "http://localhost/BASELocker/website/BASElocker/proses/returnLocker.php?kampus=" + kampus + "&lokasi=" + lokasi + "&name=" + name + "&position=" + lockerPosition ;
                     } 
                     else 
                     {
