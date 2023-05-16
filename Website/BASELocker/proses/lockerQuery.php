@@ -41,6 +41,11 @@ function updateUser($db, $user, $pass, $locker)
     $sql = "UPDATE user set `locker`= '$locker' Where username = '$user'and password = '$pass'";
     $query = mysqli_query($db, $sql);
 }
+function updateHistory($db, $user, $locker, $time, $date) 
+{
+    $sqlquery = "INSERT user set `locker` = '$locker' set `time` = '$time' set `date` = '$date'";
+    $query = mysqli_query($db, $sqlquery);
+}
 
 if (isset($_SESSION['kampus']) && isset($_SESSION['ruangan']) && isset($_SESSION['nama']) && isset($_SESSION['username']) && $_SESSION['pass']) {
 
@@ -53,6 +58,11 @@ if (isset($_SESSION['kampus']) && isset($_SESSION['ruangan']) && isset($_SESSION
     $userLocker = join(";", $userLocker);
 
     updateUser($db, $_SESSION['username'], $_SESSION['pass'], $userLocker);
+    updateHistory($db, $_SESSION['username'], $userlocker, date("h:i:sa"), date("Y/m/d"))
+
+    /*
+        
+    */
 
     header("location:../index.php");
     exit();

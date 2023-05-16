@@ -1,7 +1,5 @@
-
 <?php
 include "koneksi.php";
-header('ngrok-skip-browser-warning: 69420');
 
 $kampus    =    $_GET['kampus'];
 $lokasi    =    $_GET['lokasi'];

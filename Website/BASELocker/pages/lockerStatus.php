@@ -34,6 +34,11 @@ function statusSelector($db, $kampus, $ruangan, $nama)
 		exit();
 	}
 }
+//For Redirect to Upload Image Page
+function imageRedirect($url) {
+    header('Location: '.$url);
+    die();
+}
 
 if ((isset($_SESSION['iduser']) && (isset($_SESSION['username']) && (isset($_SESSION['pass']))))) {
     $iduser = $_SESSION['iduser'];
@@ -61,9 +66,9 @@ if ((isset($_SESSION['iduser']) && (isset($_SESSION['username']) && (isset($_SES
         <script type="text/javascript" src="js/propeller.min.js"></script>
 
         <div id="container">
-            <div id="header">
+           <div id="header">
                 <div id="logo-container">
-                    <image id="logo" src="../images/BASE.png" class="center">
+                     <image id="logo" src="../images/BASE.png" class="center">
                 </div>
                 <div id="opening-container">
                     <div class="salam">
@@ -120,6 +125,11 @@ if ((isset($_SESSION['iduser']) && (isset($_SESSION['username']) && (isset($_SES
             <!-- <div id="footer">
 				<h3>Sekolah Maju Bersama</h3>
 			</div> -->
+        </div>
+        <div class="right" 
+            style="padding-left:100px; 
+            position: relative; ">
+            <input type="button" value="To report any issues with your locker, click here!" onclick="location='reportPage.php'"/>
         </div>
     </body>
 
