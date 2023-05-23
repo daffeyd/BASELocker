@@ -33,12 +33,15 @@ include "../koneksi.php";
     echo "Sorry, your file was not uploaded.";
   // if everything is ok, try to upload file
   } else {
-    if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
+    $reportIdentifier = date("Y-m-d-h-i-sa");
+    $newFileName = ".png";
+    if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_dir.$reportIdentifier.$newFileName)) {
       echo "The file ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " has been uploaded.";
     } else {
       echo "Sorry, there was an error uploading your file.";
     }
   }
+  // Report Identifier -> YY/MM/DD/HH/SS 
   
   if (isset($_POST['LocKampus']) && isset($_POST['Ruang']) && isset($_POST['Locker']) && isset($_POST['LockerNum']) ) {
 
@@ -67,7 +70,7 @@ include "../koneksi.php";
       header("Location: ../pages/reportPage.php?error=Yoo you have to give me a lockernum baby");
     exit();
     }else{
-      $sql = "INSERT INTO `reporttable`(`LocKampus`, `Ruang`, `Locker`, `LockerNum`) VALUES ('$loc','$ruang','$locker','$lockernum')";
+      $sql = "INSERT INTO `reporttable`(`LocKampus`, `Ruang`, `Locker`, `reportID`, `LockerNum`) VALUES ('$loc','$ruang','$locker', '$reportIdentifier','$lockernum')";
       $result = mysqli_query($db, $sql);
       header("Location: ../pages/reportPage.php?success=Yoo you reported baby");
     }
